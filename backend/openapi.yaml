@@ -1,0 +1,87 @@
+openapi: 3.0.1
+info:
+  title: Mohanet API
+  version: 1.0.0
+
+paths:
+  /api/auth/login:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ login, password ]
+              properties:
+                login: { type: string, minLength: 1 }
+                password: { type: string, minLength: 1 }
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+
+  /api/auth/logout:
+    post:
+      responses:
+        "200":
+          description: OK
+
+  /api/auth/status:
+    get:
+      responses:
+        "200":
+          description: OK
+
+  /api/persons:
+    get:
+      responses:
+        "200":
+          description: OK
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ name, company_ref,phone,email ]
+              properties:
+                name: { type: string, minLength: 1 }
+                company_ref: { type: integer, minimum: 1 }
+                phone: { type: string}
+                email: { type: string}
+                comment: { type: string}
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+  /api/users:
+    get:
+      responses:
+        "200":
+          description: OK
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [person_ref, login, password, admin]
+              properties:
+                person_ref: { type: integer, minimum: 1 }
+                login: { type: string, nullable: true }
+                password: { type: string, nullable: true }
+                admin: { type: boolean,}
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized

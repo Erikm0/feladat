@@ -1,0 +1,71 @@
+body{
+  background-color: #0C5555 !important;
+  color: white;
+}
+h1{
+  text-align: center;
+}
+
+.AuthDiv{
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #033a3a;
+  border-radius: 15px;
+}
+
+.AuthForm{
+  font-size: 20px;
+}
+.LoginInput{
+  font-size: 18px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid black;
+}
+.LoginInput:hover{
+  border: 1px solid black;
+  box-shadow: 0 7px 29px 0 #169b9b;
+  transition: 0.5s;
+}
+.LoginInput:focus{
+  outline: none;
+  text-decoration: none;
+}
+
+.LoginButton{
+  margin: 10px;
+}
+
+.AppForms{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.AppForm{
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #033a3a;
+  border-radius: 15px;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+.LogOut{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+input{
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
