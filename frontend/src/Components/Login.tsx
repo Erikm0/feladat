@@ -3,8 +3,8 @@ import {useState} from "react"
 type StatusResponse = { user: null | { id: number; login: string; admin: boolean } };
 
 export default function Login({onLoggedIn}: { onLoggedIn: () => void }) {
-    const [login, setLogin] = useState("admin");
-    const [password, setPassword] = useState("admin");
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
     const [error, setError] = useState<string | null>(null);
 
     async function submit(e: React.FormEvent) {
